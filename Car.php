@@ -4,7 +4,7 @@ class Car
 {
     private string $color;
     private int $currentSpeed = 0;
-    private int $nbSeats = 4;
+    private int $nbSeat = 4;
     private int $nbWheels = 4;
     private string $energy;
     private int $energyLevel;
@@ -21,7 +21,7 @@ class Car
     }
     public function forward(): string
     {
-        $this->currentSpeed = 20;
+        $this->currentSpeed = 80;
 
         return "Go Go Go !";
     }
@@ -39,9 +39,10 @@ class Car
     {
         return $this->nbWheels;
     }
-    public function getNbSeats(): int
+
+      public function getNbSeat(): int
     {
-        return $this->nbSeats;
+        return $this->nbSeat;
     }
     public function getCurrentSpeed(): int
     {
@@ -54,6 +55,14 @@ class Car
     public function getEnergyLevel(): int
     {
         return $this->energyLevel;
+    }
+    public function setEnergyLevel(int $energyLevel): void
+    {
+        $this->energyLevel = $energyLevel;
+    }
+    public function getColor(): string
+    {
+        return $this->color;
     }
     public function setColor(string $color): void
     {
