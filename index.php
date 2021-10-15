@@ -2,27 +2,23 @@
 
 require_once 'Bicycle.php';
 
-$bike = new Bicycle('red');
-$bike->setColor = 'red';
-$bike->getCurrentSpeed = 800;
-
-echo $bike->forward();
-echo '<br> Vitesse du vélo : ' . $bike->getCurrentSpeed . ' km/h' . '<br>';
-echo $bike->brake();
-echo '<br> Vitesse du vélo : ' . $bike->getCurrentSpeed . ' km/h' . '<br>';
-echo $bike->brake();
+$bicycle = new Bicycle('blue', 1);
+echo $bicycle->forward();
+var_dump($bicycle);
 
 require_once 'Car.php';
 
+$car = new Car('green', 4, 'electric');
+echo $car->forward();
+var_dump($car);
 
-$homer = new Car('yellow', 5, 'huile de colza');
-$homer->getCurrentSpeed = 80;
+require_once 'Truck.php';
 
-echo $homer->start();
-echo '<br>La voiture d\'Homer démarre ' . $homer->start() . '<br>';
-echo '<br>' . $homer->forward() . '</br>';
-echo '<br> Homer roule à ' . $homer->getCurrentSpeed . 'km/h' . '<br>';
-echo '<br> La voiture d\'Homer roule grâce à de l\' ' . $homer->getEnergy() . '<br>';
-echo $homer->brake();
+$truck = new Truck('red',2,'fuel');
+echo $truck->forward();
+var_dump($truck);
+
+$truck->setLoading=5;
+echo $truck->inFilling()
 
 ?>
